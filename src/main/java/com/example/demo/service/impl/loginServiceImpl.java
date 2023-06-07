@@ -2,9 +2,11 @@ package com.example.demo.service.impl;
 
 import com.example.demo.model.User;
 import com.example.demo.service.LoginService;
+import org.springframework.stereotype.Component;
 
 import static java.rmi.server.LogStream.log;
 
+@Component
 public class loginServiceImpl implements LoginService {
     @Override
     public User getLoginUser(String name) {

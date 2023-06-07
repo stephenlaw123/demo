@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.model.User;
 import com.example.demo.service.LoginService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,9 +30,9 @@ public class TestController {
         user.setIdNumber("Z98765(4)");
         return user;
     }
-    @GetMapping(path = "/user/1")
-    public User getUserRoy(){
-        User user = loginService.getLoginUser("1");
+    @GetMapping(path = "/user/{id}")
+    public User getUserById(@PathVariable("id") String id){
+        User user = loginService.getLoginUser(id);
         return user;
     }
 }
